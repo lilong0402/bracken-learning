@@ -3,6 +3,5 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="bean1" class="top.lilong.spring.ioc.instance.constructor.Bean1"></bean>
-
+    <bean id="bean2" class="top.lilong.spring.ioc.instance.static_factory.Mybean2Factory" factory-method="createBean"/>
 </beans>

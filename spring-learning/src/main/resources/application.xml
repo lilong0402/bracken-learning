@@ -5,10 +5,10 @@
 http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans ">
 
-    <bean id="userDao" class="top.lilong.spring.ioc.UserDaoImpl">
+    <bean id="userDao" class="top.lilong.spring.one.UserDaoImpl">
 
     </bean>
-    <bean id="userService" class="top.lilong.spring.ioc.UserServiceImpl">
+    <bean id="userService" class="top.lilong.spring.one.UserServiceImpl">
         <!--        将id为userDao 的Bean 实例 注入到userService实例-->
         <property name="userDao" ref="userDao"/>
         <property name="message" value="aaaaa"/>

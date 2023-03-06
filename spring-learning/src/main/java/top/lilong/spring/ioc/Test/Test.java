@@ -2,7 +2,7 @@ package top.lilong.spring.ioc.Test;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import top.lilong.spring.ioc.UserDao;
+import top.lilong.spring.one.UserDao;
 import top.lilong.spring.ioc.entity.Book;
 import top.lilong.spring.ioc.entity.Cat;
 import top.lilong.spring.ioc.entity.Dog;

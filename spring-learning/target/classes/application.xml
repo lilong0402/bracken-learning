@@ -13,58 +13,58 @@ http://www.springframework.org/schema/beans ">
         <property name="userDao" ref="userDao"/>
         <property name="message" value="aaaaa"/>
     </bean>
-    <bean id="cat" class="top.lilong.spring.ioc.Animal.Cat">
+    <bean id="cat" class="top.lilong.spring.ioc.entity.Cat">
         <property name="name" value="我是小猫">
         </property>
         <property name="age" value="1"></property>
     </bean>
 
-    <bean id="dog" class="top.lilong.spring.ioc.Animal.Dog">
+    <bean id="dog" class="top.lilong.spring.ioc.entity.Dog">
         <property name="name" value="我是小狗">
 
         </property>
         <property name="age" value="1"></property>
     </bean>
-    <bean id="book" class="top.lilong.spring.ioc.Animal.Book">
+    <bean id="book" class="top.lilong.spring.ioc.entity.Book">
         <property name="id" value="1"></property>
         <property name="name" value="aa"></property>
         <property name="price" value="44"></property>
     </bean>
-    <bean class="top.lilong.spring.ioc.Animal.Book" id="book2">
+    <bean class="top.lilong.spring.ioc.entity.Book" id="book2">
         <constructor-arg name="id" value="1234"></constructor-arg>
         <constructor-arg name="name" value="abd"></constructor-arg>
         <constructor-arg name="price" value="12.7"></constructor-arg>
     </bean>
 
-    <bean id="clothe1" class="top.lilong.spring.ioc.Animal.Clothes">
+    <bean id="clothe1" class="top.lilong.spring.ioc.entity.Clothes">
         <property name="color" value="黑色"></property>
         <property name="style" value="小西装"></property>
     </bean>
-    <bean id="clothe2" class="top.lilong.spring.ioc.Animal.Clothes">
+    <bean id="clothe2" class="top.lilong.spring.ioc.entity.Clothes">
         <property name="color" value="红色"></property>
         <property name="style" value="连衣裙"></property>
     </bean>
 
-    <bean id="person1" class="top.lilong.spring.ioc.Animal.Person">
+    <bean id="person1" class="top.lilong.spring.ioc.entity.Person">
         <property name="name" value="男孩"></property>
         <property name="clothes" ref="clothe1"></property>
     </bean>
 
-    <bean id="person2" class="top.lilong.spring.ioc.Animal.Person">
+    <bean id="person2" class="top.lilong.spring.ioc.entity.Person">
         <property name="name" value="女孩"></property>
         <property name="clothes" ref="clothe2"></property>
     </bean>
 
-    <bean id="pen1" class="top.lilong.spring.ioc.Animal.Pen">
+    <bean id="pen1" class="top.lilong.spring.ioc.entity.Pen">
         <property name="name" value="铅笔"></property>
     </bean>
-    <bean id="pen2" class="top.lilong.spring.ioc.Animal.Pen">
+    <bean id="pen2" class="top.lilong.spring.ioc.entity.Pen">
         <property name="name" value="钢笔"></property>
     </bean>
-    <bean id="pen3" class="top.lilong.spring.ioc.Animal.Pen">
+    <bean id="pen3" class="top.lilong.spring.ioc.entity.Pen">
         <property name="name" value="圆珠笔"></property>
     </bean>
-    <bean class="top.lilong.spring.ioc.Animal.SchoolBag" id="schoolBag">
+    <bean class="top.lilong.spring.ioc.entity.SchoolBag" id="schoolBag">
         <property name="color" value="红色的">
 
         </property>
