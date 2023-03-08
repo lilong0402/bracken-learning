@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a7df63e-d538-4eaa-8658-52e13cea5a5f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/top/lilong/spring/ioc/annotation/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/top/lilong/spring/ioc/annotation/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -194,7 +195,11 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/nangong/大三/backen-learning/spring-learning",
+    "last_opened_file_path": "E:/nangong/大三/backen-learning/spring-web",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "spring.configuration.checksum": "376c92fd11e5353fa3a034a4f41dc2c0",
     "vue.rearranger.settings.migration": "true"
   }
@@ -294,7 +299,7 @@
       <workItem from="1678190424267" duration="134000" />
       <workItem from="1678190581168" duration="41000" />
       <workItem from="1678190677334" duration="199000" />
-      <workItem from="1678260924498" duration="16000" />
+      <workItem from="1678260924498" duration="973000" />
     </task>
     <servers />
   </component>
