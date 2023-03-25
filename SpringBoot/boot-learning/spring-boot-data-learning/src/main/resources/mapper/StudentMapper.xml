@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.lilong.mapper.StudentMapper">
+
+    <resultMap id="studentMap" type="Student">
+        <id column="student_id" property="studentId"></id>
+        <result column="clazz_id" property="clazzId"></result>
+        <result column="student_name" property="studentName"></result>
+        <result column="hometown" property="hometown"></result>
+        <result column="birthday" property="birthday"></result>
+
+        <association property="clazz" javaType="Clazz">
+            <id column="clazz_id" property="clazzId"></id>
+            <result column="clazz_name" property="clazzName"></result>
+<!--            <result column=""-->
+        </association>
+
+        <association property="course" javaType="Course">
+            <id column="course_id" property="courseId"></id>
+            <result column="course_name" property="courseName"></result>
+        </association>
+        <association property="teacher" javaType="Teacher">
+            <id column="teacher_id" property="teacherId"></id>
+            <result column="teacher_name" property="teacherName"></result>
+            <!--            <result column=""-->
+        </association>
+    </resultMap>
+    <insert id="batchInsert">
+        INSERT INTO t_student VALUES
+        <foreach collection="students" item="student" index="index" separator=",">
+            (#{student.studentId},#{student.clazzId},#{student.studentName},#{student.hometown},#{student.birthday})
+        </foreach>
+    </insert>
+    <update id="batchUpdate" parameterType="java.util.List" >
+<foreach collection="students" item="student" index="index" open="" close="" separator=";">
+        UPDATE t_student t
+    <set>
+    <if test="student.clazzId!=null">
+        `clazz_id`=#{student.clazzId},
+    </if>
+    <if test="student.studentName!=null">
+        `student_name`=#{student.studentName},
+    </if>
+    <if test="student.hometown!=null">
+        `hometown`=#{student.hometown},
+    </if>
+    <if test="student.birthday!=null">
+        `birthday`=#{student.birthday},
+    </if>
+        </set>
+    WHERE t.student_id=#{student.studentId}
+</foreach>
+    </update>
+<!--</mapper>-->
+    <delete id="batchDelete">
+        DELETE FROM t_student
+            WHERE student_id in
+             <foreach collection="idList" item="id" index="index" open="(" separator="," close=")" >
+                 #{id}
+             </foreach>
+    </delete>
+
+    <select id="selectManyToOne" resultMap="studentMap" >
+        SELECT *
+            FROM t_student s,
+                 t_clazz c,
+                 t_course d,
+                 t_cc e,
+                 t_teacher f
+        Where s.student_id = #{studentId}
+            AND s.clazz_id=c.clazz_id
+            AND c.clazz_id=e.clazz_id
+            AND e.course_id=d.course_id
+            AND f.clazz_id=c.clazz_id
+    </select>
+    <select id="dynamicSelect" resultType="top.lilong.damain.Student">
+        SELECT *
+        FROM t_student
+        WHERE 1=1
+        <choose>
+            <when test="clazzId != null">
+                AND clazz_id = #{clazzId}
+            </when>
+            <when test="studentName != null">
+                AND student_name = #{studentName}
+            </when>
+            <when test="hometown!=null">
+                AND hometown LIKE "%"#{hometown}"%"
+            </when>
+        </choose>
+    </select>
+    <select id="selectManyToStudent" parameterType="java.util.List">
+
+<foreach collection="students" item="student" index="index" open="" close="" separator=",">
+        SELECT *
+        FROM t_student s,
+             t_clazz c,
+             t_course d,
+             t_cc e,
+             t_teacher f
+        Where s.student_id = #{studentId}
+          AND s.clazz_id=c.clazz_id
+          AND c.clazz_id=e.clazz_id
+          AND e.course_id=d.course_id
+          AND f.clazz_id=c.clazz_id
+</foreach>
+    </select>
+
+</mapper>

@@ -17,6 +17,8 @@ person:
 student:
   name: 张三
 
-spring:
-  profiles:
-    active: test
+#spring:
+#  profiles:
+#    active: dev
+server:
+  port: 8081

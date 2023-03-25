@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>详情</title>
+    <style>
+        .mycomment{
+            text-indent: 50px;
+        }
+    </style>
+</head>
+<body>
+
+        作者:
+        <p class="mycomment" th:text="${comment.getAuthor()}"></p>
+        评论:
+        <p class="mycomment" th:text="${comment.getContent()}"></p>
+</body>
+</html>

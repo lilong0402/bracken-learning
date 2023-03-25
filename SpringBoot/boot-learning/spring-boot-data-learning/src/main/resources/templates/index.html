@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <style>
+        .image{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .commentDiv{
+            position: relative;
+            width: 80%;
+            height: 200px;
+            padding: 10%;
+            border-style: dotted;
+        }
+
+        .title{
+            text-align: center;
+            font-size: large;
+            font-weight:bold;
+        }
+        .article{
+            text-indent: 30px;
+            padding: 5%;
+        }
+        .myspan{
+            width: 50px;
+            height: 50px;
+        }
+        .mytext{
+            position: relative;
+
+        }
+        .mycomment{
+            text-indent: 50px;
+        }
+        a{
+            text-decoration: none;
+        }
+        a:link {text-decoration: none; color:blue;}/*未访问的链接显示为蓝色，text-decoration:none将下划线隐藏*/
+        a:visited {color:black;} /*用户已访问过的链接显示黑色*/
+        a:hover {color:pink;}   /*鼠标放置在链接上时显示为粉色*/
+        a:active {color:yellow;}  /* 链接被点击那一刻显示黄色 */
+
+    </style>
+</head>
+<body>
+<!--    <h2>首页</h2>-->
+    <h1 class="title" th:text="${title}">标题</h1>
+<div>
+    <p class="article">
+        假设你是个没步入大学的小学生、初中生、高中生，因为你喜欢学习，从而你的成绩一直都不会很差 给别人一个很好的印象，如果你是超级无敌学霸的话，班上的同学大部分都崇拜（敬畏）着你，如果你本人较喜欢交流的话，这样身边吸引了很多同学疯狂想和你做朋友，交流交流 感情（划掉）学习。   你的家人在家里也会格外照看你，比如吃饭的时候多块肉给你啊。很欣慰的看着认真学习的你啦。亲戚见到你就开心，过年的时候红包里多放钱，好让你以后能多帮助自己的孩子 有出息了不要忘了我们。苟富贵勿相忘啊。   而如果你是学渣，还不爱好好学习 长的一般，班里的大部分同学觉得你是异类，在教室外的走廊上遇见你都会躲得你远远的 里都不想理你 有的带着勉强的笑容跟你打招呼，心里却想着：怎么老是遇到她/他 尴尬死。还有更多悲惨遭遇就不一一举例了。  当你习惯了好好学习你会享受其中，那种乐趣只有自己知道。拿我举个栗子吧，高中时怕自己上不了好学校但是请不了家教（各科都挺差的）选择看学魁榜的网课，还有赵礼显老师的课，每天积累下来顺利考上本科院校。到了大学怕像大部分人一样荒废4年时光，选择了大鹏教育的网课 学习ps pr ai等软件的学习，而且已经把大学四年的规划都做好了，考什么证都一一列出来，这样一规划，其实大学四年的时间太少过的了很紧凑。
+    </p>
+    <div th:each="item:${discussList}">
+        <div class="commentDiv">
+            作者：
+            <span class="myspan"><img class="image" th:src="${item.getUrl()}"></span>
+        <span class="mytext" th:text="${item.getAuthor()}"></span>
+<!--        <p class="mycomment" th:text="${item.getContent()}"></p>-->
+            <a th:href="@{'/detail?author='+${item.getAuthor()}}">查看评论</a>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
